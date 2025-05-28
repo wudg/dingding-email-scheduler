@@ -30,30 +30,13 @@ def send_email(subject, content, to_email):
 
 def get_email_content():
     """生成邮件内容"""
-    # 获取北京时间
-    tz = pytz.timezone('Asia/Shanghai')
-    now = datetime.datetime.now(tz)
-    date_str = now.strftime("%Y年%m月%d日")
-    time_str = now.strftime("%H:%M")
-    
-    # 根据时间生成不同内容
-    if now.hour == 8 and now.minute >= 30:
-        content = f"早上好！\n\n现在是北京时间 {time_str}，新的一天开始了！\n\n"
-        content += "今日提醒：\n1. 检查工作计划\n2. 完成晨会准备\n3. 处理紧急邮件"
-        subject = f"【早安提醒】{date_str}"
-    elif now.hour == 18 and now.minute >= 30:
-        content = f"下午好！\n\n现在是北京时间 {time_str}，工作即将结束。\n\n"
-        content += "今日总结：\n1. 回顾今日完成事项\n2. 准备明日计划\n3. 放松休息"
-        subject = f"【晚间提醒】{date_str}"
-    else:
-        content = f"测试邮件\n发送时间：{date_str} {time_str}"
-        subject = f"【测试邮件】{date_str}"
-    
+    content = "钉钉打卡"
+    subject = "钉钉打卡"
     return subject, content
 
 if __name__ == "__main__":
     # 收件人邮箱（替换为你的QQ邮箱）
-    to_email = "your-qq-email@qq.com"
+    to_email = "321073229@qq.com"
     
     subject, content = get_email_content()
     print(f"准备发送邮件:\n主题: {subject}\n内容: {content}")
