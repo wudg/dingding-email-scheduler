@@ -2,8 +2,6 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-import datetime
-import pytz
 
 def send_email(subject, content, to_email):
     # 从环境变量获取邮箱配置
@@ -13,12 +11,10 @@ def send_email(subject, content, to_email):
     # 创建邮件内容
     msg = MIMEText(content, 'plain', 'utf-8')
     
-    # 根据 RFC 标准设置 From 标头
-    from_header = f'自动邮件系统 <{qq_email}>'
-    msg['From'] = Header(from_header, 'utf-8')
+    msg['From'] = qq_email
     
     # 设置 To 和 Subject 标头
-    msg['To'] = Header(to_email, 'utf-8')
+    msg['To'] = to_email
     msg['Subject'] = Header(subject, 'utf-8')
     
     try:
