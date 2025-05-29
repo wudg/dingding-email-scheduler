@@ -38,9 +38,5 @@ adb -s d77c234 shell input keyevent 3
 timeout /t 5
 adb -s d77c234 shell input keyevent 26
 
-set "url=https://www.pushplus.plus/send"
-set "payload={\"token\": \"f6291109234849649d3482909aa6bfd4\", \"title\": \"dingtalk execute success\", \"content\": \"DingTalk Auto-Punch Script Success\"}"
-curl -X POST -H "Content-Type: application/json" -d "!payload!" "!url!"
-
 endlocal
 ```
