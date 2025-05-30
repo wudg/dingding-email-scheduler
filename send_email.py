@@ -31,8 +31,8 @@ def send_email(subject, content, to_email):
 
 def get_email_content():
     """生成邮件内容"""
-    content = "钉钉打卡"
-    subject = "钉钉打卡"
+    content = "钉钉打卡-Github"
+    subject = "钉钉打卡-Github"
     return subject, content
 
 if __name__ == "__main__":
